@@ -13,9 +13,15 @@ export class HomeComponent implements OnInit {
   }
  
   addTag() {
-    this.metaService.addTag({ name: 'description', content: 'Article Description' });
-    this.metaService.addTag({ name: 'robots', content: 'index,follow' });
-    this.metaService.addTag({ property: 'og:title', content: 'Content Title for social media' });
+    this.metaService.updateTag({property:"og:title", content:"article.title"});
+    this.metaService.updateTag({property:"og:description", content:"article.category.name"});
+    this.metaService.updateTag({property:"og:url", content:"https://www.nouliv.fr/detail/6202087c7462451de9988d43"});
+    this.metaService.updateTag({property:"og:image", content:"https://www.nouliv.fr/api/article/body/questionnaire21644301178662.jpg"});
+    this.metaService.updateTag({property:"og:image:alt", content:"article.title"});
+    this.metaService.updateTag({property:"og:image:height", content:"600"});
+    this.metaService.updateTag({property:"og:image:width", content:"400"});
+    this.metaService.updateTag({property:"og:author", content:"@Nouliv"});
+
   }
 
   ngOnInit(): void {
